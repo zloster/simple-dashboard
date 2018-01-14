@@ -1,0 +1,27 @@
+{
+    "panels": [{
+        "title": "Infrastructure",
+        "sources": [{
+            "type": "status-code",
+            "title": "GitLab.com",
+            "link": "https://status.gitlab.com/",
+            "interval": 30
+        }, {
+            "type": "status-code",
+            "title": "Dashboard server",
+            "link": "http://localhost:8081/",
+            "interval": 15
+        }, {
+            "type": "dropwizard",
+            "title": "Production - Healthcheck",
+            "adminPath": "http://localhost:9090/admin"
+        }]
+    }, {
+        "title": "Playground",
+        "sources": [{
+            "type": "message",
+            "title": "Not written in stone - sample text",
+            "message": "True"
+        }]
+    }]
+}

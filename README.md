@@ -1,3 +1,25 @@
+# Състояние
+
+## Инсталиране на нодДжиЕс във Вагрантската кутия:
+wget -qO- https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install nodejs
+
+## Инсталиране на библиотеките на проекта:
+cd simple-dashboard/
+sudo npm install -g grunt-cli
+sudo npm install -g serve //Инсталира простичък уеб сървър. 'grunt dev' дава грешки и не тръгва. 
+npm install --save-dev
+
+## Работа с проекта:
+grunt ci --force
+cp src/target_config.json target/dist/config.json
+serve --port 8080 ./target/dist/
+
+## Проблеми в момента:
+StatusCode.js модула в момента седи винаги ОК, даже и като се загуби връзка със съответния адрес.
+Статусите от Амазон не работят.
+Има много библиотеки за обновяване
+
 # simple-dashboard
 [![Circle CI](https://circleci.com/gh/Lugribossk/simple-dashboard.svg?style=shield)](https://circleci.com/gh/Lugribossk/simple-dashboard)
 [![Dependency Status](https://david-dm.org/Lugribossk/simple-dashboard.svg)](https://david-dm.org/Lugribossk/simple-dashboard)
