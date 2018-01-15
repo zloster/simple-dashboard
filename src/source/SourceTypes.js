@@ -1,5 +1,6 @@
 import DropwizardHealthcheck from "./DropwizardHealthcheck";
 import GithubBranches from "./GithubBranches";
+import HTTPStatusCode from "./HTTPStatusCode";
 import Loggly from "./Loggly";
 import Message from "./Message";
 import RssAws from "./RssAws";
@@ -14,6 +15,7 @@ export default [
     DockerCloudService,
     DropwizardHealthcheck,
     GithubBranches,
+    HTTPStatusCode,
     Loggly,
     Message,
     RssAws,

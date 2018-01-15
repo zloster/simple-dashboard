@@ -12,28 +12,29 @@ export default class StatusCode extends Source {
         return request.get(this.url)
             .promise();
     }
-
+    
     getStatus() {
         return this.fetchData()
-            .catch(response => {
-                return {
-                    title: this.title,
-                    link: this.link,
-                    status: "danger",
-                    messages: [{
-                        message: "Response had status code " + response.status
-                    }]
-                };
-            })
-            .then(() => {
+            .then(response => {
                 return {
                     title: this.title,
                     link: this.link,
                     status: "success",
                     messages: []
                 };
+            })
+            .catch(response => {
+                return {
+                    title: this.title,
+                    link: this.link,
+                    status: "warning",
+                    messages: [{
+                        message: "Error: " + response
+                    }]
+                };
             });
     }
+
 }
 
 StatusCode.type = "status-code";

@@ -1,15 +1,15 @@
 {
     "panels": [{
-        "title": "Infrastructure",
+        "title": "http-check",
         "sources": [{
-            "type": "status-code",
+            "type": "http-check",
             "title": "GitLab.com",
-            "link": "https://status.gitlab.com/",
+            "url": "https://status.gitlab.com",
             "interval": 30
         }, {
-            "type": "status-code",
+            "type": "http-check",
             "title": "Dashboard server",
-            "link": "http://localhost:8081/",
+            "url": "http://localhost:8081",
             "interval": 15
         }, {
             "type": "dropwizard",
@@ -17,11 +17,21 @@
             "adminPath": "http://localhost:9090/admin"
         }]
     }, {
-        "title": "Playground",
+        "title": "status-code",
         "sources": [{
-            "type": "message",
-            "title": "Not written in stone - sample text",
-            "message": "True"
+            "type": "status-code",
+            "title": "GitLab.com",
+            "url": "https://status.gitlab.com",
+            "interval": 30
+        }, {
+            "type": "status-code",
+            "title": "Dashboard server",
+            "url": "http://localhost:8081",
+            "interval": 15
+        }, {
+            "type": "dropwizard",
+            "title": "Production - Healthcheck",
+            "adminPath": "http://localhost:9090/admin"
         }]
     }]
 }
