@@ -25,6 +25,7 @@ serve --port 8080 ./target/dist/
 
 - StatusCode.js не работи със `https://status.gitlab.com`. Може би, защото сайтът връща празен `HTTP response`. Казва: `SuperAgent promise error: Bad request`.
 - Добавен и HTTPStatusCode.js, който е с леко променена логика, но и той се сърди на отговора от горния адрес.
+- Проблемът с горните две е в използваната библиотека: https://github.com/KyleAMathews/superagent-bluebird-promise/blob/master/index.js#L79-L99 Има нова версия с подобрени съобщения за грешки.
 - Статусите от Амазон не работят.
 - Има много библиотеки за обновяване.
 
